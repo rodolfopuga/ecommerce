@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="http://localhost:4200/home">Store</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/productos">Nuevo producto <span class="sr-only">(current)</span></a>
+            </li>
+            <ul class="navbar-right">
+                <li><a href="http://localhost:4200/carrito" id="cart" (click)="cart()"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+            </ul>
+            <button class="btn btn-bottom-right btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-4" *ngFor="let Producto of product">
+        <div class="card mb-4 shadow-sm">
+
+            <img [src]="'data:image/png;base64,'+ Producto.pro_img | safe:'url' " class="img-thumbnail" alt="Red dot" />
+            <div class="card-body">
+                <p class="card-text" maxlength="10">
+                    <strong>${{Producto.pro_precio}}</strong>
+                </p>
+                <p class="card-text module line-clamp">{{Producto.pro_descripcion}}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-primary product-btn" (click)="addToCart(Producto?.pro_id)">Agregar carrito</button>
+                        <div class="add-to-cart">
+                            <div class="qty-label">
+                                Qty
+                                <div class="input-number">
+                                    <input #quantity [max]="Producto.pro_cantidad" [min]="Producto.pro_cantidad >= 1 ? Producto.pro_cantidad : 0" readonly type="number" value="{{Producto.pro_cantidad >= 1 ? 1 : 0}}">
+                                    <span (click)="Increase()" class="qty-up">+</span>
+                                    <span (click)="Decrease()" class="qty-down">-</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-secondary product-btn">Ver detalles</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
